@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Windows XP CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/xp.css" />
+
+		<!-- Clippy.js -->
+		<link
+			rel="stylesheet"
+			type="text/css"
+			href="resources/clippy/clippy.css"
+			media="all"
+		/>
+
+		<script src="resources/jquery-1.7.min.js"></script>
+		<script src="resources/clippy/clippy.min.js"></script>
+		<script type="text/javascript">
+			clippy.BASE_PATH = "resources/clippy/agents/";
+
+			clippy.load("Clippy", function (agent) {
+				agent.show();
+				agent.speak(
+					"Hypocrite that you are, for you trust the chemicals in your brain to tell you that they are chemicals. All Knowledge is ultimately based on that which we cannot prove. Will you fight? Or will you perish like a dog?"
+				);
+			});
+
+			function closeWindow() {
+				const window = document.getElementById("principal");
+
+				window.style.display = "none";
+
+				console.log("rtes");
+			}
+		</script>
+
+		<meta charset="UTF-8" />
+		<style>
+			body {
+				background-image: url(resources/bliss.jpg);
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="principal" class="window" style="margin: 32px; width: 250px">
+			<div class="title-bar">
+				<div class="title-bar-text">I must harm to heal</div>
+
+				<div class="title-bar-controls">
+					<button aria-label="Minimize"></button>
+					<button aria-label="Maximize"></button>
+					<button aria-label="Close" onclick="closeWindow()"></button>
+				</div>
+			</div>
+
+			<div class="window-body">
+				<p>YOU CAN'T ESCAPE</p>
+
+				<input type="text" />
+				<button>Are you sure?</button>
+			</div>
+		</div>
+	</body>
+</html>
