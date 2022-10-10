@@ -12,24 +12,58 @@
 			media="all"
 		/>
 
-		<script src="http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.7.min.js"></script>
 		<script src="resources/clippy/clippy.min.js"></script>
 		<script type="text/javascript">
 			clippy.BASE_PATH = "resources/clippy/agents/";
 
 			clippy.load("Clippy", function (agent) {
 				agent.show();
-				agent.speak(
-					"Hypocrite that you are, for you trust the chemicals in your brain to tell you that they are chemicals. All Knowledge is ultimately based on that which we cannot prove. Will you fight? Or will you perish like a dog?"
-				);
+				// agent.speak(
+					// "I will get there... eventually"
+				// );
 			});
 
-			function closeWindow() {
-				const window = document.getElementById("principal");
+			// TODO put this in external script
+			document.addEventListener("DOMContentLoaded", function () {
+				const tabs = document.querySelectorAll("menu[role=tablist]");
 
-				window.style.display = "none";
+				for (let i = 0; i < tabs.length; i++) {
+					const tab = tabs[i];
 
-				console.log("rtes");
+					const tabButtons = tab.querySelectorAll(
+						"menu[role=tablist] > button"
+					);
+
+					tabButtons.forEach((btn) =>
+						btn.addEventListener("click", (e) => {
+							e.preventDefault();
+
+							tabButtons.forEach((button) => {
+								if (
+									button.getAttribute("aria-controls") ===
+									e.target.getAttribute("aria-controls")
+								) {
+									button.setAttribute("aria-selected", true);
+									openTab(e, tab);
+								} else {
+									button.setAttribute("aria-selected", false);
+								}
+							});
+						})
+					);
+				}
+			});
+
+			function openTab(event, tab) {
+				const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
+				articles.forEach((p) => {
+					p.setAttribute("hidden", true);
+				});
+				const article = tab.parentNode.querySelector(
+					`[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
+				);
+				article.removeAttribute("hidden");
 			}
 		</script>
 
@@ -44,22 +78,60 @@
 		</style>
 	</head>
 	<body>
-		<div id="principal" class="window" style="margin: 32px; width: 250px">
+		<div id="principal" class="window" style="margin: 32px; width: 300px">
 			<div class="title-bar">
-				<div class="title-bar-text">I must harm to heal</div>
+				<div class="title-bar-text">About me</div>
 
 				<div class="title-bar-controls">
 					<button aria-label="Minimize"></button>
 					<button aria-label="Maximize"></button>
-					<button aria-label="Close" onclick="closeWindow()"></button>
+					<button aria-label="Close"></button>
 				</div>
 			</div>
 
 			<div class="window-body">
-				<p>YOU CAN'T ESCAPE</p>
+				<section class="tabs">
+					<menu role="tablist" aria-label="Sample tabs">
+						<button role="tab" aria-selected="true" aria-controls="tab-A">
+							Who am i?
+						</button>
+						<button role="tab" aria-controls="tab-B">What do i do?</button>
+					</menu>
+					<article role="tabpanel" id="tab-A">
+						<div>
+							<img
+								style="
+									width: 35%;
+									padding: 10px;
+									margin-left: auto;
+									margin-right: auto;
+									display: block;
+								"
+								src="https://avatars.githubusercontent.com/u/19296773?v=4"
+							/>
+						</div>
+						<li>
+							I'm <b>Isahann Hanacleto</b>, also known as...
+							<ul>
+								<li>Iso</li>
+								<li>Isaque</li>
+							</ul>
+						</li>
+						<li>Born in <b>July 25, 1998;</b></li>
+						<li>I currently live in <b>Maringá - PR, Brazil;</b></li>
+						<li>
+							In my spare time, i...
+							<ul>
+								<li>Work out</li>
+								<li>Play some games</li>
+								<li>Sleep</li>
+							</ul>
+						</li>
+					</article>
 
-				<input type="text" />
-				<button>Are you sure?</button>
+					<article role="tabpanel" hidden id="tab-B">
+					</article>
+				</section>
 			</div>
 		</div>
 	</body>
