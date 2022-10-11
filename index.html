@@ -1,86 +1,164 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<!-- Windows XP CSS -->
-		<link rel="stylesheet" href="https://unpkg.com/xp.css" />
 
-		<!-- Clippy.js -->
-		<link
-			rel="stylesheet"
-			type="text/css"
-			href="resources/clippy/clippy.css"
-			media="all"
-		/>
+<head>
+	<!-- Windows XP CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/xp.css" />
 
-		<script src="https://code.jquery.com/jquery-1.7.min.js"></script>
-		<script src="resources/clippy/clippy.min.js"></script>
-		<script type="text/javascript">
-			clippy.BASE_PATH = "resources/clippy/agents/";
+	<!-- Clippy.js -->
+	<link rel="stylesheet" type="text/css" href="resources/clippy/clippy.css" media="all" />
 
-			clippy.load("Clippy", function (agent) {
-				agent.show();
-				// agent.speak(
-					// "I will get there... eventually"
-				// );
-			});
+	<link rel="stylesheet" href="style.css">
 
-			// TODO put this in external script
-			document.addEventListener("DOMContentLoaded", function () {
-				const tabs = document.querySelectorAll("menu[role=tablist]");
+	<script src="https://code.jquery.com/jquery-1.7.min.js"></script>
+	<script src="resources/clippy/clippy.min.js"></script>
+	<script type="text/javascript">
+		clippy.BASE_PATH = "resources/clippy/agents/";
 
-				for (let i = 0; i < tabs.length; i++) {
-					const tab = tabs[i];
+		clippy.load("Clippy", function (agent) {
+			agent.show();
+			// agent.speak(
+			// "I will get there... eventually"
+			// );
+		});
 
-					const tabButtons = tab.querySelectorAll(
-						"menu[role=tablist] > button"
-					);
+		// TODO put this in external script
+		document.addEventListener("DOMContentLoaded", function () {
+			const tabs = document.querySelectorAll("menu[role=tablist]");
 
-					tabButtons.forEach((btn) =>
-						btn.addEventListener("click", (e) => {
-							e.preventDefault();
+			for (let i = 0; i < tabs.length; i++) {
+				const tab = tabs[i];
 
-							tabButtons.forEach((button) => {
-								if (
-									button.getAttribute("aria-controls") ===
-									e.target.getAttribute("aria-controls")
-								) {
-									button.setAttribute("aria-selected", true);
-									openTab(e, tab);
-								} else {
-									button.setAttribute("aria-selected", false);
-								}
-							});
-						})
-					);
-				}
-			});
-
-			function openTab(event, tab) {
-				const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
-				articles.forEach((p) => {
-					p.setAttribute("hidden", true);
-				});
-				const article = tab.parentNode.querySelector(
-					`[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
+				const tabButtons = tab.querySelectorAll(
+					"menu[role=tablist] > button"
 				);
-				article.removeAttribute("hidden");
-			}
-		</script>
 
-		<meta charset="UTF-8" />
-		<style>
-			body {
-				background-image: url(resources/bliss.jpg);
-				background-attachment: fixed;
-				background-repeat: no-repeat;
-				background-size: cover;
+				tabButtons.forEach((btn) =>
+					btn.addEventListener("click", (e) => {
+						e.preventDefault();
+
+						tabButtons.forEach((button) => {
+							if (
+								button.getAttribute("aria-controls") ===
+								e.target.getAttribute("aria-controls")
+							) {
+								button.setAttribute("aria-selected", true);
+								openTab(e, tab);
+							} else {
+								button.setAttribute("aria-selected", false);
+							}
+						});
+					})
+				);
 			}
-		</style>
-	</head>
-	<body>
-		<div id="principal" class="window" style="margin: 32px; width: 300px">
+		});
+
+		function openTab(event, tab) {
+			const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
+			articles.forEach((p) => {
+				p.setAttribute("hidden", true);
+			});
+			const article = tab.parentNode.querySelector(
+				`[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
+			);
+			article.removeAttribute("hidden");
+		}
+	</script>
+
+	<meta charset="UTF-8" />
+	<style>
+		body {
+			background-image: url(resources/bliss.jpg);
+			background-attachment: fixed;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="window" style="margin: 32px; width: 300px">
+		<div class="title-bar">
+			<div class="title-bar-text">About me</div>
+
+			<div class="title-bar-controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+
+		<div class="window-body">
+			<section class="tabs">
+				<menu role="tablist" aria-label="Sample tabs">
+					<button role="tab" aria-selected="true" aria-controls="tab-A">
+						Who am i?
+					</button>
+					<button role="tab" aria-controls="tab-B">What do i do?</button>
+				</menu>
+				<article role="tabpanel" id="tab-A">
+					<div>
+						<img style="
+									width: 35%;
+									padding: 10px;
+									margin-left: auto;
+									margin-right: auto;
+									display: block;
+								" src="https://avatars.githubusercontent.com/u/19296773?v=4" />
+					</div>
+					<li>
+						I'm <b>Isahann Hanacleto</b>, also known as...
+						<ul>
+							<li>Iso</li>
+							<li>Isaque</li>
+						</ul>
+					</li>
+					<li>Born in <b>July 25, 1998;</b></li>
+					<li>I currently live in <b>Maringá - PR, Brazil;</b></li>
+					<li>
+						In my spare time, i...
+						<ul>
+							<li>Work out</li>
+							<li>Play some games</li>
+							<li>Sleep</li>
+						</ul>
+					</li>
+				</article>
+
+				<article role="tabpanel" hidden id="tab-B"></article>
+			</section>
+		</div>
+	</div>
+
+	<div class="window" style="width: 400px;">
+		<div class="title-bar">
+			<div class="title-bar-text">Job experience</div>
+
+			<div class="title-bar-controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+
+		<div class="window-body">
+			<section class="tabs">
+				<menu role="tablist" aria-label="Sample tabs">
+					<button role="tab" aria-selected="true" aria-controls="tab-A">
+						Internship
+					</button>
+					<button role="tab" aria-controls="tab-B">Full-time</button>
+				</menu>
+				<article role="tabpanel" hidden id="tab-A"></article>
+				<article role="tabpanel" hidden id="tab-B"></article>
+			</section>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div id="principal" class="window">
 			<div class="title-bar">
-				<div class="title-bar-text">About me</div>
+				<div class="title-bar-text">Contact</div>
 
 				<div class="title-bar-controls">
 					<button aria-label="Minimize"></button>
@@ -90,49 +168,22 @@
 			</div>
 
 			<div class="window-body">
-				<section class="tabs">
-					<menu role="tablist" aria-label="Sample tabs">
-						<button role="tab" aria-selected="true" aria-controls="tab-A">
-							Who am i?
-						</button>
-						<button role="tab" aria-controls="tab-B">What do i do?</button>
-					</menu>
-					<article role="tabpanel" id="tab-A">
-						<div>
-							<img
-								style="
-									width: 35%;
-									padding: 10px;
-									margin-left: auto;
-									margin-right: auto;
-									display: block;
-								"
-								src="https://avatars.githubusercontent.com/u/19296773?v=4"
-							/>
-						</div>
-						<li>
-							I'm <b>Isahann Hanacleto</b>, also known as...
-							<ul>
-								<li>Iso</li>
-								<li>Isaque</li>
-							</ul>
-						</li>
-						<li>Born in <b>July 25, 1998;</b></li>
-						<li>I currently live in <b>Maringá - PR, Brazil;</b></li>
-						<li>
-							In my spare time, i...
-							<ul>
-								<li>Work out</li>
-								<li>Play some games</li>
-								<li>Sleep</li>
-							</ul>
-						</li>
-					</article>
-
-					<article role="tabpanel" hidden id="tab-B">
-					</article>
-				</section>
+				<fieldset>
+					<div class="contact">
+						<a target="_blank" href="mailto:isahanacleto@gmail.com"><img class="contact-icon"
+								src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Mail"
+								title="Mail" /></a>
+						<a target="_blank" href="https://www.linkedin.com/in/isahann-hanacleto/"><img
+								class="contact-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+								alt="LinkedIn" title="LinkedIn" /></a>
+						<a target="_blank" href="https://github.com/isahann"><img class="contact-icon"
+								src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"
+								title="GitHub" /></a>
+					</div>
+				</fieldset>
 			</div>
 		</div>
-	</body>
+	</div>
+</body>
+
 </html>
