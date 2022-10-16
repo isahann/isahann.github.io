@@ -2,82 +2,20 @@
 <html>
 
 <head>
-	<!-- Windows XP CSS -->
 	<link rel="stylesheet" href="https://unpkg.com/xp.css" />
-
-	<!-- Clippy.js -->
 	<link rel="stylesheet" type="text/css" href="resources/clippy/clippy.css" media="all" />
-
 	<link rel="stylesheet" href="style.css">
 
 	<script src="https://code.jquery.com/jquery-1.7.min.js"></script>
 	<script src="resources/clippy/clippy.min.js"></script>
-	<script type="text/javascript">
-		clippy.BASE_PATH = "resources/clippy/agents/";
-
-		clippy.load("Clippy", function (agent) {
-			agent.show();
-			// agent.speak(
-			// "I will get there... eventually"
-			// );
-		});
-
-		// TODO put this in external script
-		document.addEventListener("DOMContentLoaded", function () {
-			const tabs = document.querySelectorAll("menu[role=tablist]");
-
-			for (let i = 0; i < tabs.length; i++) {
-				const tab = tabs[i];
-
-				const tabButtons = tab.querySelectorAll(
-					"menu[role=tablist] > button"
-				);
-
-				tabButtons.forEach((btn) =>
-					btn.addEventListener("click", (e) => {
-						e.preventDefault();
-
-						tabButtons.forEach((button) => {
-							if (
-								button.getAttribute("aria-controls") ===
-								e.target.getAttribute("aria-controls")
-							) {
-								button.setAttribute("aria-selected", true);
-								openTab(e, tab);
-							} else {
-								button.setAttribute("aria-selected", false);
-							}
-						});
-					})
-				);
-			}
-		});
-
-		function openTab(event, tab) {
-			const articles = tab.parentNode.querySelectorAll('[role="tabpanel"]');
-			articles.forEach((p) => {
-				p.setAttribute("hidden", true);
-			});
-			const article = tab.parentNode.querySelector(
-				`[role="tabpanel"]#${event.target.getAttribute("aria-controls")}`
-			);
-			article.removeAttribute("hidden");
-		}
-	</script>
+	<script src="src/clippy.js"></script>
+	<script src="src/tab.js"></script>
 
 	<meta charset="UTF-8" />
-	<style>
-		body {
-			background-image: url(resources/bliss.jpg);
-			background-attachment: fixed;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-	</style>
 </head>
 
 <body>
-	<div class="window" style="margin: 32px; width: 300px">
+	<div class="window" style="margin: 32px; width: 400px">
 		<div class="title-bar">
 			<div class="title-bar-text">About me</div>
 
@@ -91,10 +29,9 @@
 		<div class="window-body">
 			<section class="tabs">
 				<menu role="tablist" aria-label="Sample tabs">
-					<button role="tab" aria-selected="true" aria-controls="tab-A">
-						Who am i?
-					</button>
+					<button role="tab" aria-selected="true" aria-controls="tab-A">Who am i?</button>
 					<button role="tab" aria-controls="tab-B">What do i do?</button>
+					<button role="tab" aria-controls="tab-C">What do i know?</button>
 				</menu>
 				<article role="tabpanel" id="tab-A">
 					<div>
@@ -107,24 +44,180 @@
 								" src="https://avatars.githubusercontent.com/u/19296773?v=4" />
 					</div>
 					<li>
-						I'm <b>Isahann Hanacleto</b>, also known as...
+						<label><b>Isahann Hanacleto</b>, also known as...</label>
 						<ul>
-							<li>Iso</li>
-							<li>Isaque</li>
+							<li><label>Iso</label></li>
+							<li><label>Isaque</label></li>
 						</ul>
 					</li>
-					<li>Born in <b>July 25, 1998;</b></li>
-					<li>I currently live in <b>Maringá - PR, Brazil;</b></li>
+					<li><label>Born in: <b>July 25, 1998, in Cascavel - PR, Brazil</b>;</label></li>
+					<li><label>Currently living in:<b>Maringá - PR, Brazil</b>;</label></li>
 					<li>
-						In my spare time, i...
+						<label>In my spare time, i...</label>
 						<ul>
-							<li>Work out</li>
-							<li>Play some games</li>
-							<li>Sleep</li>
+							<li><label>Work out</label></li>
+							<li><label>Play some games</label></li>
 						</ul>
 					</li>
 				</article>
 
+				<article hidden role="tabpanel" id="tab-B">
+					<label>
+						I'm a software developer, finished my Analysis and Systems Development degree in 2018, and my
+						Java specialization post-degree in 2022.
+
+						<br /><br />
+						I've been working with software development since mid-2016, when i started my first internship.
+
+						<br /> <br />
+						My work has been focused on developing most of the time, and partially aiding in
+						technical/requirment analysis and testing back-end systems development, mainly using Java and
+						its technologies.
+					</label>
+				</article>
+
+				<article hidden role="tabpanel" id="tab-C">
+					<label>Here's some of the technologies i know, some working full-time on them, and others by playing
+						around with personal projects.</label>
+
+					<br /><br />
+					<fieldset>
+						<legend>Back-end</legend>
+
+						<ul class="tree-view">
+							<li>
+								<details>
+									<summary>Java</summary>
+									<ul>
+										<li>Spring Framework</li>
+										<li>JPA/Hibernate</li>
+										<li>Maven</li>
+										<li>JUnit/Mockito</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Javascript/Typescript</summary>
+									<ul>
+										<li>Node.js/NPM</li>
+										<li>Jest</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Databases/Messaging</summary>
+									<ul>
+										<li>PostgreSQL</li>
+										<li>Oracle, MSSQL 2008 and 2016</li>
+										<li>CosmosDB (MongoDB)</li>
+										<li>Liquibase</li>
+										<li>IBM MQ/Amazon SQS</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>General scripting</summary>
+									<ul>
+										<li>Bash</li>
+										<li>Groovy for Jenkinsfile</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Other</summary>
+									<ul>
+										<li>Docker</li>
+										<li>Tomcat/Wildfly servers</li>
+									</ul>
+								</details>
+							</li>
+						</ul>
+					</fieldset>
+
+					<fieldset>
+						<legend>Front-end</legend>
+						<ul class="tree-view">
+							<li>
+								<details>
+									<summary>Basics</summary>
+									<ul>
+										<li>HTML 5</li>
+										<li>Intermediate CSS</li>
+										<li>Intermediate Javascript</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Frameworks/Languages</summary>
+									<ul>
+										<li>React</li>
+										<li>Angular</li>
+										<li>JSP/JSF</li>
+										<li>Primefaces/Materialize/Material design</li>
+									</ul>
+								</details>
+							</li>
+						</ul>
+					</fieldset>
+					<fieldset>
+						<legend>Other tools</legend>
+						<ul class="tree-view">
+							<li>
+								<details>
+									<summary>Repositories</summary>
+									<ul>
+										<li>Git for versioning</li>
+										<li>GitHub</li>
+										<li>Bitbucket</li>
+										<li>Kallithea</li>
+									</ul>
+								</details>
+							</li>
+							<li>
+								<details>
+									<summary>Management</summary>
+									<ul>
+										<li>Jira</li>
+										<li>Redmine</li>
+									</ul>
+								</details>
+							</li>
+						</ul>
+					</fieldset>
+				</article>
+			</section>
+		</div>
+	</div>
+
+	<div class="window" style="width: 400px;">
+		<div class="title-bar">
+			<div class="title-bar-text">Education</div>
+
+			<div class="title-bar-controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+
+		<div class="window-body">
+			<section class="tabs">
+				<menu role="tablist" aria-label="Sample tabs">
+					<button role="tab" aria-selected="true" aria-controls="tab-A">
+						Degree
+					</button>
+					<button role="tab" aria-controls="tab-B">Post-degree</button>
+				</menu>
+				<article role="tabpanel" hidden id="tab-A">
+
+					<label for="">teste</label>
+
+				</article>
 				<article role="tabpanel" hidden id="tab-B"></article>
 			</section>
 		</div>
