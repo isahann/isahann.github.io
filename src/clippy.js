@@ -1,8 +1,10 @@
 clippy.BASE_PATH = "resources/clippy/agents/";
 
-clippy.load("Clippy", function (agent) {
-	agent.show();
-	// agent.speak(
-	// "I will get there... eventually"
-	// );
+var clippyAgent;
+
+clippy.load("Clippy", (agent) => {
+	agent.moveTo(700, 200);
+	agent.play("Greeting");
+	agent.speak("Hello!");
+	clippyAgent = agent;
 });

@@ -10,12 +10,15 @@
 	<script src="resources/clippy/clippy.min.js"></script>
 	<script src="src/clippy.js"></script>
 	<script src="src/tab.js"></script>
+	<script src="src/contact.js"></script>
 
 	<meta charset="UTF-8" />
+	<link rel="icon" href="resources/images/mouse.png" type="image/svg">
+	<title>Isahann - About me</title>
 </head>
 
 <body>
-	<div class="window" style="margin: 32px; width: 400px">
+	<div class="window" style="margin: 32px; width: 300px">
 		<div class="title-bar">
 			<div class="title-bar-text">About me</div>
 
@@ -35,13 +38,7 @@
 				</menu>
 				<article role="tabpanel" id="tab-A">
 					<div>
-						<img style="
-									width: 35%;
-									padding: 10px;
-									margin-left: auto;
-									margin-right: auto;
-									display: block;
-								" src="https://avatars.githubusercontent.com/u/19296773?v=4" />
+						<img class="profile" src="resources/images/isahann.png" />
 					</div>
 					<li>
 						<label><b>Isahann Hanacleto</b>, also known as...</label>
@@ -50,8 +47,12 @@
 							<li><label>Isaque</label></li>
 						</ul>
 					</li>
-					<li><label>Born in: <b>July 25, 1998, in Cascavel - PR, Brazil</b>;</label></li>
-					<li><label>Currently living in:<b>Maringá - PR, Brazil</b>;</label></li>
+					<li><label>Born in...</label>
+						<ul>
+							<li><label>Cascavel - Paraná, Brazil</label></li>
+							<li><label>July 25, 1998</label></li>
+						</ul>
+					<li><label>Currently living in Maringá - PR, Brazil;</label></li>
 					<li>
 						<label>In my spare time, i...</label>
 						<ul>
@@ -194,9 +195,9 @@
 		</div>
 	</div>
 
-	<div class="window" style="width: 400px;">
+	<div id="contact" class="window" style="margin: 32px; width: 150px">
 		<div class="title-bar">
-			<div class="title-bar-text">Education</div>
+			<div class="title-bar-text">Contact</div>
 
 			<div class="title-bar-controls">
 				<button aria-label="Minimize"></button>
@@ -206,75 +207,13 @@
 		</div>
 
 		<div class="window-body">
-			<section class="tabs">
-				<menu role="tablist" aria-label="Sample tabs">
-					<button role="tab" aria-selected="true" aria-controls="tab-A">
-						Degree
-					</button>
-					<button role="tab" aria-controls="tab-B">Post-degree</button>
-				</menu>
-				<article role="tabpanel" hidden id="tab-A">
-
-					<label for="">teste</label>
-
-				</article>
-				<article role="tabpanel" hidden id="tab-B"></article>
-			</section>
-		</div>
-	</div>
-
-	<div class="window" style="width: 400px;">
-		<div class="title-bar">
-			<div class="title-bar-text">Job experience</div>
-
-			<div class="title-bar-controls">
-				<button aria-label="Minimize"></button>
-				<button aria-label="Maximize"></button>
-				<button aria-label="Close"></button>
-			</div>
-		</div>
-
-		<div class="window-body">
-			<section class="tabs">
-				<menu role="tablist" aria-label="Sample tabs">
-					<button role="tab" aria-selected="true" aria-controls="tab-A">
-						Internship
-					</button>
-					<button role="tab" aria-controls="tab-B">Full-time</button>
-				</menu>
-				<article role="tabpanel" hidden id="tab-A"></article>
-				<article role="tabpanel" hidden id="tab-B"></article>
-			</section>
-		</div>
-	</div>
-
-	<div class="footer">
-		<div id="principal" class="window">
-			<div class="title-bar">
-				<div class="title-bar-text">Contact</div>
-
-				<div class="title-bar-controls">
-					<button aria-label="Minimize"></button>
-					<button aria-label="Maximize"></button>
-					<button aria-label="Close"></button>
+			<fieldset>
+				<div class="contact">
+					<img onclick="redirect(0)" src="resources/images/gmail.png" alt="Mail" title="Mail" />
+					<img onclick="redirect(1)" src="resources/images/linkedin.png" alt="LinkedIn" title="LinkedIn" />
+					<img onclick="redirect(2)" src="resources/images/github.png" alt="GitHub" title="GitHub" />
 				</div>
-			</div>
-
-			<div class="window-body">
-				<fieldset>
-					<div class="contact">
-						<a target="_blank" href="mailto:isahanacleto@gmail.com"><img class="contact-icon"
-								src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" alt="Mail"
-								title="Mail" /></a>
-						<a target="_blank" href="https://www.linkedin.com/in/isahann-hanacleto/"><img
-								class="contact-icon" src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-								alt="LinkedIn" title="LinkedIn" /></a>
-						<a target="_blank" href="https://github.com/isahann"><img class="contact-icon"
-								src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub"
-								title="GitHub" /></a>
-					</div>
-				</fieldset>
-			</div>
+			</fieldset>
 		</div>
 	</div>
 </body>
