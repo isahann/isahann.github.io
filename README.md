@@ -8,5 +8,5 @@ Created using:
 - CSS 3
 - Javascript
 - Third-pary libs:
-  - XP.css for HTML component theming
-  - ClippyJS for Clippy animations
+  - [XP.css](https://botoxparty.github.io/XP.css/) for HTML component theming
+  - [ClippyJs](https://www.smore.com/clippy-js) for Clippy animations
