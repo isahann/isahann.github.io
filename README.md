@@ -9,4 +9,4 @@ Created using:
 - Javascript
 - Third-pary libs:
   - [XP.css](https://botoxparty.github.io/XP.css/) for HTML component theming
-  - [ClippyJs](https://www.smore.com/clippy-js) for Clippy animations
+  - [Clippy.js](https://www.smore.com/clippy-js) for Clippy animations
