@@ -7,6 +7,6 @@ Created using:
 - HTML 5
 - CSS 3
 - Javascript
-- Third-pary libs:
-  - XP.css for HTML component theming
-  - ClippyJS for Clippy animations
+- Third-party libs:
+  - [XP.css](https://botoxparty.github.io/XP.css/) for HTML component theming
+  - [Clippy.js](https://www.smore.com/clippy-js) for Clippy animations
