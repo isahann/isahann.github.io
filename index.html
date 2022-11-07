@@ -13,14 +13,43 @@
 	<script src="src/contact.js"></script>
 
 	<meta charset="UTF-8" />
-	<link rel="icon" href="resources/images/mouse.png" type="image/svg">
+	<link rel="icon" href="resources/Windows XP High Resolution Icon Pack/Windows XP Icons/Windows Update.png"
+		type="image/svg">
 	<title>Isahann - About me</title>
 </head>
 
 <body>
 	<div class="window" style="margin: 32px; width: 300px">
 		<div class="title-bar">
-			<div class="title-bar-text">About me</div>
+			<div class="title-bar-text">Professional experience</div>
+
+			<div class="title-bar-controls">
+				<button aria-label="Minimize"></button>
+				<button aria-label="Maximize"></button>
+				<button aria-label="Close"></button>
+			</div>
+		</div>
+
+		<div class="window-body">
+			<section class="tabs">
+				<menu role="tablist" aria-label="Sample tabs">
+					<button role="tab" aria-selected="true" aria-controls="tab-totvs">TOTVS</button>
+					<button role="tab" aria-controls="tab-syngular">Syngular Systems</button>
+					<button role="tab" aria-controls="tab-matera">Matera</button>
+					<button role="tab" aria-controls="tab-ciandt">CI&T</button>
+				</menu>
+			</section>
+			<article role="tabpanel"></article>
+		</div>
+	</div>
+
+	<div class="window" style="margin: 32px; width: 300px">
+		<div class="title-bar">
+			<div class="title-bar-text">
+				<img src="resources/Windows XP High Resolution Icon Pack/Windows XP Icons/Speech.png" class="icon"
+					alt="" />
+				About me
+			</div>
 
 			<div class="title-bar-controls">
 				<button aria-label="Minimize"></button>
@@ -47,12 +76,18 @@
 							<li><label>Isaque</label></li>
 						</ul>
 					</li>
-					<li><label>Born in...</label>
-						<ul>
-							<li><label>Cascavel - Paraná, Brazil</label></li>
-							<li><label>July 25, 1998</label></li>
-						</ul>
-					<li><label>Currently living in Maringá - PR, Brazil;</label></li>
+					<li>
+
+						<img src="resources/Windows XP High Resolution Icon Pack/Windows XP Icons/Internet Shortcut.png"
+							class="icon" alt="" />
+						<label>Born in...</label>
+					</li>
+					<ul>
+						<li><label>Cascavel - Paraná, Brazil</label></li>
+						<li><label>July 25, 1998</label></li>
+					</ul>
+					<li><img src="resources/Windows XP High Resolution Icon Pack/Windows XP Icons/IE Home.png"
+						class="icon" alt="" /><label>Currently living in Maringá - PR, Brazil;</label></li>
 					<li>
 						<label>In my spare time, i...</label>
 						<ul>
@@ -78,7 +113,8 @@
 				</article>
 
 				<article hidden role="tabpanel" id="tab-C">
-					<label>Here's some of the technologies i know, some working full-time on them, and others by playing
+					<label>Here's some of the technologies i know, some working professionally full-time on them, and
+						others by playing
 						around with personal projects.</label>
 
 					<br /><br />

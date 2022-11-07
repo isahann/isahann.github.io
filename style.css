@@ -27,6 +27,16 @@
     flex-direction: row-reverse;
 }
 
+.icon {
+    width: 16px;
+    height: 16px; 
+}
+
+.icon img {
+    width: 16px;
+    height: 16px; 
+}
+
 body {
     background-image: url(resources/images/bliss.jpg);
     background-attachment: fixed;
