@@ -6,7 +6,9 @@ import clippy, {Agent} from "clippyts";
 })
 export class ClippyService {
 
-  constructor(private _agent: Agent) {
+  private _agent: Agent | undefined;
+
+  constructor() {
     clippy.load({
       name: 'Clippy',
       failCb: (err) => console.log(err),
@@ -18,6 +20,6 @@ export class ClippyService {
   }
 
   public speak(text: string): void {
-    this._agent.speak(text, false);
+    this._agent!.speak(text, false);
   }
 }
