@@ -1,113 +1,23 @@
-<label>Here's some of the technologies i know, some working professionally full-time on them, and
-  others by playing
-  around with personal projects.</label>
+<label>Here's some of the technologies I know, some working professionally full-time on them, and others by messing around with personal projects.</label>
 
-<br /><br />
-<fieldset>
-  <legend>Back-end</legend>
+<br/><br/>
 
-  <ul class="tree-view">
-    <li>
-      <details>
-        <summary>Java</summary>
-        <ul>
-          <li>Spring Framework</li>
-          <li>JPA/Hibernate</li>
-          <li>Maven</li>
-          <li>JUnit/Mockito</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>Javascript/Typescript</summary>
-        <ul>
-          <li>Node.js/NPM</li>
-          <li>Jest</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>Databases/Messaging</summary>
-        <ul>
-          <li>PostgreSQL</li>
-          <li>Oracle, MSSQL 2008 and 2016</li>
-          <li>CosmosDB (MongoDB)</li>
-          <li>Liquibase</li>
-          <li>IBM MQ/Amazon SQS</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>General scripting</summary>
-        <ul>
-          <li>Bash</li>
-          <li>Groovy for Jenkinsfile</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>Other</summary>
-        <ul>
-          <li>Docker</li>
-          <li>Tomcat/Wildfly servers</li>
-        </ul>
-      </details>
-    </li>
-  </ul>
-</fieldset>
-
-<fieldset>
-  <legend>Front-end</legend>
-  <ul class="tree-view">
-    <li>
-      <details>
-        <summary>Basics</summary>
-        <ul>
-          <li>HTML 5</li>
-          <li>Intermediate CSS</li>
-          <li>Intermediate Javascript</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>Frameworks/Languages</summary>
-        <ul>
-          <li>React</li>
-          <li>Angular</li>
-          <li>JSP/JSF</li>
-          <li>Primefaces/Materialize/Material design</li>
-        </ul>
-      </details>
-    </li>
-  </ul>
-</fieldset>
-<fieldset>
-  <legend>Other tools</legend>
-  <ul class="tree-view">
-    <li>
-      <details>
-        <summary>Repositories</summary>
-        <ul>
-          <li>Git for versioning</li>
-          <li>GitHub</li>
-          <li>Bitbucket</li>
-          <li>Kallithea</li>
-        </ul>
-      </details>
-    </li>
-    <li>
-      <details>
-        <summary>Management</summary>
-        <ul>
-          <li>Jira</li>
-          <li>Redmine</li>
-        </ul>
-      </details>
-    </li>
-  </ul>
-</fieldset>
+<ng-container *ngFor="let competence of compentences">
+  <fieldset>
+    <legend>{{competence.area}}</legend>
+    <ul class="tree-view">
+      <ng-container *ngFor="let tech of competence.techs">
+        <li>
+          <details>
+            <summary>{{tech.description}}</summary>
+            <ul>
+              <ng-container *ngFor="let subTech of tech.subTechs">
+                <li>{{subTech}}</li>
+              </ng-container>
+            </ul>
+          </details>
+        </li>
+      </ng-container>
+    </ul>
+  </fieldset>
+</ng-container>
