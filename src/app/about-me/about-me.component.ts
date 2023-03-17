@@ -11,40 +11,45 @@ import {WhatDoIKnowComponent} from "./what-do-i-know/what-do-i-know.component";
 })
 export class AboutMeComponent implements OnInit {
 
+  readonly buttons: string[] = ['Minimize', 'Maximize', 'Close'];
+  readonly titleBarText: string = 'About me';
+
   protected windowTabs: WindowTab[] = [{
     ariaSelected: true,
-    ariaControls: 'tab-A',
+    ariaControls: 'tab-who-am-i',
     title: 'Who am I?'
   }, {
     ariaSelected: false,
-    ariaControls: 'tab-B',
+    ariaControls: 'tab-what-do-i-do',
     title: 'What do I do?',
   }, {
     ariaSelected: false,
-    ariaControls: 'tab-C',
+    ariaControls: 'tab-what-do-i-know',
     title: 'What do I know?'
   }];
 
   protected articles: WindowTabArticle[] = [
     {
-      id: 'tab-A',
+      id: 'tab-who-am-i',
       hidden: false,
       component: WhoAmIComponent
     }, {
-      id: 'tab-B',
+      id: 'tab-what-do-i-do',
       hidden: true,
       component: WhatDoIDoComponent
     }, {
-      id: 'tab-C',
+      id: 'tab-what-do-i-know',
       hidden: true,
       component: WhatDoIKnowComponent
     }
   ]
 
   constructor() {
+    // Empty
   }
 
   ngOnInit(): void {
+    // Empty
   }
 
   changeSelectedTab(selectedTab: WindowTab): void {

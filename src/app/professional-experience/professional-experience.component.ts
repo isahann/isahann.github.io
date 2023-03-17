@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ClippyService} from "../clippy/clippy.service";
 
 @Component({
   selector: 'app-professional-experience',
@@ -8,15 +7,9 @@ import {ClippyService} from "../clippy/clippy.service";
 })
 export class ProfessionalExperienceComponent implements OnInit {
 
-  constructor(
-    private readonly clippyService: ClippyService
-  ) {
+  constructor() {
   }
 
   ngOnInit(): void {
-  }
-
-  speak(text: string) {
-    this.clippyService.speak(text);
   }
 }

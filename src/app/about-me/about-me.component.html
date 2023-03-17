@@ -3,13 +3,13 @@
     <div class="title-bar-text">
       <img src="../../assets/Windows%20XP%20High%20Resolution%20Icon%20Pack/Windows XP Icons/Speech.png" class="icon"
            alt=""/>
-      About me
+      {{titleBarText}}
     </div>
 
     <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+      <ng-container *ngFor="let button of buttons">
+        <button [attr.aria-label]="button"></button>
+      </ng-container>
     </div>
   </div>
 
@@ -27,18 +27,6 @@
           <ng-template [ngComponentOutlet]="article.component"></ng-template>
         </article>
       </ng-container>
-
-<!--      <article role="tabpanel" id="tab-A">-->
-<!--        <app-who-am-i></app-who-am-i>-->
-<!--      </article>-->
-
-<!--      <article hidden role="tabpanel" id="tab-B">-->
-<!--        <app-what-do-i-do></app-what-do-i-do>-->
-<!--      </article>-->
-
-<!--      <article hidden role="tabpanel" id="tab-C">-->
-<!--        <app-what-do-i-know></app-what-do-i-know>-->
-<!--      </article>-->
     </section>
   </div>
 </div>

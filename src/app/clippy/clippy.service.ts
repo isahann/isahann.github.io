@@ -19,7 +19,7 @@ export class ClippyService {
     });
   }
 
-  public speak(text: string): void {
-    this._agent!.speak(text, false);
+  speak(text: string) {
+    this._agent?.speak(text, false);
   }
 }
