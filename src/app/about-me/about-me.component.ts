@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {WindowTab, WindowTabArticle} from "../types/Tab";
+import {WindowTab} from "../types/Tab";
 import {WhoAmIComponent} from "./who-am-i/who-am-i.component";
 import {WhatDoIDoComponent} from "./what-do-i-do/what-do-i-do.component";
 import {WhatDoIKnowComponent} from "./what-do-i-know/what-do-i-know.component";
@@ -11,38 +11,25 @@ import {WhatDoIKnowComponent} from "./what-do-i-know/what-do-i-know.component";
 })
 export class AboutMeComponent implements OnInit {
 
-  readonly buttons: string[] = ['Minimize', 'Maximize', 'Close'];
-  readonly titleBarText: string = 'About me';
+  readonly windowTitleBar: string = 'About me';
+  readonly windowButtons: string[] = ['Minimize', 'Maximize', 'Close'];
 
   protected windowTabs: WindowTab[] = [{
-    ariaSelected: true,
-    ariaControls: 'tab-who-am-i',
-    title: 'Who am I?'
+    id: 'tab-who-am-i',
+    title: 'Who am I?',
+    selected: true,
+    component: WhoAmIComponent
   }, {
-    ariaSelected: false,
-    ariaControls: 'tab-what-do-i-do',
+    id: 'tab-what-do-i-do',
     title: 'What do I do?',
+    selected: false,
+    component: WhatDoIDoComponent
   }, {
-    ariaSelected: false,
-    ariaControls: 'tab-what-do-i-know',
-    title: 'What do I know?'
+    id: 'tab-what-do-i-know',
+    title: 'What do I know?',
+    selected: false,
+    component: WhatDoIKnowComponent
   }];
-
-  protected articles: WindowTabArticle[] = [
-    {
-      id: 'tab-who-am-i',
-      hidden: false,
-      component: WhoAmIComponent
-    }, {
-      id: 'tab-what-do-i-do',
-      hidden: true,
-      component: WhatDoIDoComponent
-    }, {
-      id: 'tab-what-do-i-know',
-      hidden: true,
-      component: WhatDoIKnowComponent
-    }
-  ]
 
   constructor() {
     // Empty
@@ -53,16 +40,12 @@ export class AboutMeComponent implements OnInit {
   }
 
   changeSelectedTab(selectedTab: WindowTab): void {
-    if (selectedTab.ariaSelected)
+    if (selectedTab.selected)
       return;
 
-    this.windowTabs.forEach(tab =>
-      tab.ariaSelected = tab.ariaControls === selectedTab.ariaControls
-    );
-
-    this.articles.forEach(article => {
-      article.hidden = article.id !== selectedTab.ariaControls
-    });
+    this.windowTabs.forEach(tab => {
+      tab.selected = selectedTab.id === tab.id
+    })
   }
 }
 

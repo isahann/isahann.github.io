@@ -1,11 +1,6 @@
 export interface WindowTab {
-  ariaSelected: boolean,
-  ariaControls: string,
-  title: string
-}
-
-export interface WindowTabArticle {
   id: string,
-  hidden: boolean,
+  title: string,
+  selected: boolean,
   component: any
 }

@@ -1,13 +1,13 @@
-<div class="window" style="margin: 32px; width: 300px">
+<div class="window">
   <div class="title-bar">
     <div class="title-bar-text">
       <img src="../../assets/Windows%20XP%20High%20Resolution%20Icon%20Pack/Windows XP Icons/Speech.png" class="icon"
            alt=""/>
-      {{titleBarText}}
+      {{windowTitleBar}}
     </div>
 
     <div class="title-bar-controls">
-      <ng-container *ngFor="let button of buttons">
+      <ng-container *ngFor="let button of windowButtons">
         <button [attr.aria-label]="button"></button>
       </ng-container>
     </div>
@@ -17,14 +17,24 @@
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
         <ng-container *ngFor="let tab of windowTabs">
-          <button role="tab" [attr.aria-selected]="tab.ariaSelected"
-                  [attr.aria-controls]="tab.ariaControls" (click)="this.changeSelectedTab(tab)">{{tab.title}}</button>
+          <button
+            role="tab"
+            [attr.aria-controls]="tab.id"
+            [attr.aria-selected]="tab.selected"
+            (click)="this.changeSelectedTab(tab)"
+          >
+            {{tab.title}}
+          </button>
         </ng-container>
       </menu>
 
-      <ng-container *ngFor="let article of articles">
-        <article role="tabpanel" [hidden]="article.hidden" [id]="article.id">
-          <ng-template [ngComponentOutlet]="article.component"></ng-template>
+      <ng-container *ngFor="let tab of windowTabs">
+        <article
+          role="tabpanel"
+          [id]="tab.id"
+          [hidden]="!tab.selected"
+        >
+          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
         </article>
       </ng-container>
     </section>

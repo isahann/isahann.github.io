@@ -63,9 +63,11 @@ export class WhatDoIKnowComponent implements OnInit {
   ]
 
   constructor() {
+    // Empty
   }
 
   ngOnInit(): void {
+    // Empty
   }
 
 }

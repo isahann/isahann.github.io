@@ -1,0 +1,21 @@
+<div id="contact" class="window">
+  <div class="title-bar">
+    <div class="title-bar-text">{{windowTitleBar}}</div>
+
+    <div class="title-bar-controls">
+      <ng-container *ngFor="let button of windowButtons">
+        <button [attr.aria-label]="button"></button>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="window-body">
+    <fieldset>
+      <div class="contact">
+        <ng-container *ngFor="let contact of contacts">
+          <img [src]="contact.imagePath" [alt]="contact.alt" (click)="this.redirect(contact)" [title]="contact.title"/>
+        </ng-container>
+      </div>
+    </fieldset>
+  </div>
+</div>

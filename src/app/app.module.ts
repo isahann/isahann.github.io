@@ -5,11 +5,13 @@ import {AppComponent} from './app.component';
 import {ProfessionalExperienceComponent} from './professional-experience/professional-experience.component';
 import {ClippyService} from "./clippy/clippy.service";
 import {AboutMeModule} from "./about-me/about-me.module";
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfessionalExperienceComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

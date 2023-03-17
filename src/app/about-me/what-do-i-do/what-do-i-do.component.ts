@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhatDoIDoComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    // Empty
+  }
 
   ngOnInit(): void {
+    // Empty
   }
 
 }

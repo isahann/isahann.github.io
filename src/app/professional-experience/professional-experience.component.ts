@@ -8,8 +8,10 @@ import {Component, OnInit} from '@angular/core';
 export class ProfessionalExperienceComponent implements OnInit {
 
   constructor() {
+    // Empty
   }
 
   ngOnInit(): void {
+    // Empty
   }
 }

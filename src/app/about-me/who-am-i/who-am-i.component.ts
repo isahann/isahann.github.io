@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhoAmIComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    // Empty
+  }
 
   ngOnInit(): void {
+    // Empty
   }
 
 }

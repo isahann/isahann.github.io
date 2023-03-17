@@ -22,4 +22,8 @@ export class ClippyService {
   speak(text: string) {
     this._agent?.speak(text, false);
   }
+
+  play(animation: string) {
+    this._agent?.play(animation);
+  }
 }
