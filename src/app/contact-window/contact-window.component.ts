@@ -3,11 +3,11 @@ import {Contact} from "../types/Contact";
 import {ClippyService} from "../clippy/clippy.service";
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.sass']
+  selector: 'app-contact-window',
+  templateUrl: './contact-window.component.html',
+  styleUrls: ['./contact-window.component.sass']
 })
-export class ContactComponent implements OnInit {
+export class ContactWindowComponent implements OnInit {
 
   readonly windowTitleBar: string = 'Contact';
   readonly windowButtons: string[] = ['Minimize', 'Maximize', 'Close'];

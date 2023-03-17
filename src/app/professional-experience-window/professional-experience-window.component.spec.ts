@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProfessionalExperienceComponent } from './professional-experience.component';
+import { ProfessionalExperienceWindowComponent } from './professional-experience-window.component';
 
 describe('ProfessionalExperienceComponent', () => {
-  let component: ProfessionalExperienceComponent;
-  let fixture: ComponentFixture<ProfessionalExperienceComponent>;
+  let component: ProfessionalExperienceWindowComponent;
+  let fixture: ComponentFixture<ProfessionalExperienceWindowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfessionalExperienceComponent ]
+      declarations: [ ProfessionalExperienceWindowComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ProfessionalExperienceComponent);
+    fixture = TestBed.createComponent(ProfessionalExperienceWindowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

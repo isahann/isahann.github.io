@@ -5,11 +5,11 @@ import {WhatDoIDoComponent} from "./what-do-i-do/what-do-i-do.component";
 import {WhatDoIKnowComponent} from "./what-do-i-know/what-do-i-know.component";
 
 @Component({
-  selector: 'app-about-me',
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.sass']
+  selector: 'app-about-me-window',
+  templateUrl: './about-me-window.component.html',
+  styleUrls: ['./about-me-window.component.sass']
 })
-export class AboutMeComponent implements OnInit {
+export class AboutMeWindowComponent implements OnInit {
 
   readonly windowTitleBar: string = 'About me';
   readonly windowButtons: string[] = ['Minimize', 'Maximize', 'Close'];
