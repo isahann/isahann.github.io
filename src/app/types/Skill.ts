@@ -1,4 +1,4 @@
-export interface Competence {
+export interface Skill {
   area: string,
   techs: Tech[]
 }

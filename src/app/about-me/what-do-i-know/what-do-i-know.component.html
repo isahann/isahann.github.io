@@ -2,11 +2,11 @@
 
 <br/><br/>
 
-<ng-container *ngFor="let competence of compentences">
+<ng-container *ngFor="let skill of skills">
   <fieldset>
-    <legend>{{competence.area}}</legend>
+    <legend>{{skill.area}}</legend>
     <ul class="tree-view">
-      <ng-container *ngFor="let tech of competence.techs">
+      <ng-container *ngFor="let tech of skill.techs">
         <li>
           <details>
             <summary>{{tech.description}}</summary>

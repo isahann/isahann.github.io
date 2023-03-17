@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Competence} from "../../types/Competence";
+import {Skill} from "../../types/Skill";
 
 @Component({
   selector: 'app-what-do-i-know',
@@ -8,7 +8,7 @@ import {Competence} from "../../types/Competence";
 })
 export class WhatDoIKnowComponent implements OnInit {
 
-  readonly compentences: Competence[] = [
+  readonly skills: Skill[] = [
     {
       area: 'Back-end',
       techs: [
