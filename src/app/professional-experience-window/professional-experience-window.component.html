@@ -1,23 +1,38 @@
-<div class="window" style="margin: 32px; width: 300px">
+<div class="window">
   <div class="title-bar">
-    <div class="title-bar-text">Professional experience</div>
+    <div class="title-bar-text">{{windowTitleBar}}</div>
 
     <div class="title-bar-controls">
-      <button aria-label="Minimize"></button>
-      <button aria-label="Maximize"></button>
-      <button aria-label="Close"></button>
+      <ng-container *ngFor="let button of windowButtons">
+        <button [attr.aria-label]="button"></button>
+      </ng-container>
     </div>
   </div>
 
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <button role="tab" aria-selected="true" aria-controls="tab-totvs">TOTVS</button>
-        <button role="tab" aria-controls="tab-syngular">Syngular Systems</button>
-        <button role="tab" aria-controls="tab-matera">Matera</button>
-        <button role="tab" aria-controls="tab-ciandt">CI&T</button>
+        <ng-container *ngFor="let tab of windowTabs">
+          <button
+            role="tab"
+            [attr.aria-controls]="tab.id"
+            [attr.aria-selected]="tab.selected"
+            (click)="this.changeSelectedTab(tab)"
+          >
+            {{tab.title}}
+          </button>
+        </ng-container>
       </menu>
+
+      <ng-container *ngFor="let tab of windowTabs">
+        <article
+          role="tabpanel"
+          [id]="tab.id"
+          [hidden]="!tab.selected"
+        >
+          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+        </article>
+      </ng-container>
     </section>
-    <article role="tabpanel"></article>
   </div>
 </div>
