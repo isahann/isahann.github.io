@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {WindowTab} from "../types/Tab";
 import {SocialComponent} from "./social/social.component";
-import {SendEmailComponent} from "./send-email/send-email.component";
 
 @Component({
   selector: 'app-contact-window',
@@ -18,12 +17,14 @@ export class ContactWindowComponent implements OnInit {
     title: 'Social',
     selected: true,
     component: SocialComponent
-  }, {
-    id: 'tab-email',
-    title: 'Email me',
-    selected: false,
-    component: SendEmailComponent
-  },];
+  },
+  //   {
+  //   id: 'tab-email',
+  //   title: 'Email me',
+  //   selected: false,
+  //   component: SendEmailComponent
+  // }
+  ];
 
   constructor() {
     // Empty
