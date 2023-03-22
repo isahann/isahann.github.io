@@ -6,7 +6,7 @@ import {ClippyService} from "./clippy/clippy.service";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   constructor(
     private readonly clippyService: ClippyService
@@ -14,7 +14,13 @@ export class AppComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.clippyService.speak('Welcome!');
+    setTimeout(() => {
+      this.clippyService.show();
+
+      setTimeout(() => {
+        this.clippyService.speak('Welcome!');
+      }, 1000);
+    }, 3000);
   }
 
 }
