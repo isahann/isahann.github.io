@@ -1,0 +1,23 @@
+<label>Here's some of the technologies I know, some working professionally full-time on them, and others by messing around with personal projects.</label>
+
+<br/><br/>
+
+<ng-container *ngFor="let skill of skills">
+  <fieldset>
+    <legend>{{skill.area}}</legend>
+    <ul class="tree-view">
+      <ng-container *ngFor="let tech of skill.techs">
+        <li>
+          <details>
+            <summary>{{tech.description}}</summary>
+            <ul>
+              <ng-container *ngFor="let subTech of tech.subTechs">
+                <li>{{subTech}}</li>
+              </ng-container>
+            </ul>
+          </details>
+        </li>
+      </ng-container>
+    </ul>
+  </fieldset>
+</ng-container>
