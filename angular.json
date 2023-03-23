@@ -101,6 +101,17 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "message": "Deploying from angular-cli-ghpages",
+            "branch": "main",
+            "baseHref": "https://isahann.github.io",
+            "repo": "https://github.com/isahann/isahann.github.io.git",
+            "name": "Isahann Hanacleto",
+            "email": "isahanacleto@gmail.com"
+          }
         }
       }
     }
