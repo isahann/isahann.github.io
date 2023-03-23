@@ -21,7 +21,7 @@ export class SocialComponent implements OnInit {
       title: 'LinkedIn',
       imagePath: 'assets/images/linkedin.png',
       alt: 'Linkedin',
-      message: 'Sending you to my LinkedIn, feel free to send a message!',
+      message: 'Sending you to my LinkedIn...',
       redirectUrl: 'https://www.linkedin.com/in/isahann-hanacleto/'
     },
     {

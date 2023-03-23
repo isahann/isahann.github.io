@@ -13,7 +13,7 @@ export class ClippyService {
       name: 'Clippy',
       failCb: (err) => console.log(err),
       successCb: (agent) => {
-        // agent.show(false);
+        agent.show(false);
         this._agent = agent;
       }
     });
@@ -25,10 +25,5 @@ export class ClippyService {
 
   play(animation: string) {
     this._agent?.play(animation);
-  }
-
-  show() {
-    this._agent?.reposition();
-    this._agent?.show(true);
   }
 }

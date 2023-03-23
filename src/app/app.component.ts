@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ClippyService} from "./clippy/clippy.service";
 
 @Component({
   selector: 'app-root',
@@ -9,18 +8,12 @@ import {ClippyService} from "./clippy/clippy.service";
 export class AppComponent implements OnInit {
 
   constructor(
-    private readonly clippyService: ClippyService
   ) {
+    // Empty
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.clippyService.show();
-
-      setTimeout(() => {
-        this.clippyService.speak('Welcome!');
-      }, 1000);
-    }, 3000);
+    // Empty
   }
 
 }
