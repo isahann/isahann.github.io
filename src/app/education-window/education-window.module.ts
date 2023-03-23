@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {EducationWindowComponent} from "./education-window.component";
 import { UnivelComponent } from './univel/univel.component';
 import { UtfprComponent } from './utfpr/utfpr.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { UtfprComponent } from './utfpr/utfpr.component';
     UtfprComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    DragDropModule
   ],
   exports: [
     EducationWindowComponent

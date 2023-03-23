@@ -5,11 +5,13 @@ import { TotvsExperienceComponent } from './totvs-experience/totvs-experience.co
 import { SyngularExperienceComponent } from './syngular-experience/syngular-experience.component';
 import { MateraExperienceComponent } from './matera-experience/matera-experience.component';
 import { CiandtExperienceComponent } from './ciandt-experience/ciandt-experience.component';
+import {DragDropModule} from "@angular/cdk/drag-drop";
 
 @NgModule({
   declarations: [ProfessionalExperienceWindowComponent, TotvsExperienceComponent, SyngularExperienceComponent, MateraExperienceComponent, CiandtExperienceComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    DragDropModule
   ],
   exports: [
     ProfessionalExperienceWindowComponent
