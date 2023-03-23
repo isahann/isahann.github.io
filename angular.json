@@ -106,7 +106,7 @@
           "builder": "angular-cli-ghpages:deploy",
           "options": {
             "message": "Deploying from angular-cli-ghpages",
-            "branch": "main",
+            "branch": "gh-pages",
             "baseHref": "https://isahann.github.io",
             "repo": "https://github.com/isahann/isahann.github.io.git",
             "name": "Isahann Hanacleto",
