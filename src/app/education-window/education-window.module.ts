@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {EducationWindowComponent} from "./education-window.component";
 import { UnivelComponent } from './univel/univel.component';
 import { UtfprComponent } from './utfpr/utfpr.component';
@@ -12,10 +12,11 @@ import {DragDropModule} from "@angular/cdk/drag-drop";
     UnivelComponent,
     UtfprComponent
   ],
-  imports: [
-    CommonModule,
-    DragDropModule
-  ],
+    imports: [
+        CommonModule,
+        DragDropModule,
+        NgOptimizedImage
+    ],
   exports: [
     EducationWindowComponent
   ]
