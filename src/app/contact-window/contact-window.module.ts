@@ -1,17 +1,17 @@
-import { NgModule } from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {ContactWindowComponent} from "./contact-window.component";
-import {SendEmailComponent} from "./send-email/send-email.component";
-import {SocialComponent} from "./social/social.component";
 import {DragDropModule} from "@angular/cdk/drag-drop";
+import {CommonComponentsModule} from "../common/common-components.module";
 
 @NgModule({
-  declarations: [ContactWindowComponent, SendEmailComponent, SocialComponent],
-    imports: [
-        CommonModule,
-        DragDropModule,
-        NgOptimizedImage
-    ],
-  exports: [ContactWindowComponent, SendEmailComponent, SocialComponent],
+  declarations: [ContactWindowComponent],
+  imports: [
+    DragDropModule,
+    CommonModule,
+    CommonComponentsModule,
+  ],
+  exports: [ContactWindowComponent],
 })
-export class ContactWindowModule { }
+export class ContactWindowModule {
+}

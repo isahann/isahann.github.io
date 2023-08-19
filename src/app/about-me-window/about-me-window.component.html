@@ -1,20 +1,5 @@
-<div class="window" cdkDrag>
-  <div class="title-bar" cdkDragHandle>
-    <img
-      ngSrc="assets/images/icons/about-me.png"
-      alt="" height="16" width="16" class="window-title-icon"/>
-
-    <div class="title-bar-text">
-      {{windowTitleBar}}
-    </div>
-
-    <div class="title-bar-controls">
-      <ng-container *ngFor="let button of windowButtons">
-        <button [attr.aria-label]="button"></button>
-      </ng-container>
-    </div>
-  </div>
-
+<div class="window">
+  <app-window-title-bar [title]="this.windowTitleBar" iconPath="about-me.png"></app-window-title-bar>
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
