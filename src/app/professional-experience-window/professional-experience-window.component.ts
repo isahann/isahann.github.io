@@ -43,7 +43,7 @@ export class ProfessionalExperienceWindowComponent implements OnInit {
       companyName: 'Matera',
       location: 'Maringá - PR, Brazil',
       workTypes: ['On-site (jan/2020 - mar/2020)', 'Remote (mar/2020 - feb/2022)'],
-      skills: [],
+      skills: ['Java', 'Spring Framework', 'Git', 'Apache Maven', 'JavaScript', 'REST APIs', 'AngularJs', 'Docker/Docker compose', 'CSS', 'Jira', 'Hibernate', 'JUnit', 'Bash', 'JSP', 'MSSQL', 'PLSQL'],
       duration: 'jan/2020 - mar/2022',
       roles: ['Junior Software Developer (2020-2021)', 'Mid-level Software Developer (2022)'],
       description: 'Mainly system development, but brief performances on technical analysis and testing. First performance was with an Internet Banking system, primarily fixing bugs in the back-end with Spring and PL/SQL. Second role was in the development, technical analysis and assistance in testing the Brazilian Payment System (SPB), managing the flow of message transmissions between FIs and the BC (Brazil\'s central bank), the cashier pilot screen, which verifies current transactions in the system, and between other modules of the same.'
