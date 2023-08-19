@@ -1,22 +1,10 @@
-<div class="window" cdkDrag>
-  <div class="title-bar" cdkDragHandle>
-    <img
-      ngSrc="assets/images/icons/professional-experience.png"
-      alt="" height="16" width="16" class="window-title-icon"/>
-
-    <div class="title-bar-text">{{windowTitleBar}}</div>
-
-    <div class="title-bar-controls">
-      <ng-container *ngFor="let button of windowButtons">
-        <button [attr.aria-label]="button"></button>
-      </ng-container>
-    </div>
-  </div>
+<div class="window">
+  <app-window-title-bar [title]="this.windowTitleBar" iconPath="professional-experience.png"></app-window-title-bar>
 
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of windowTabs">
+        <ng-container *ngFor="let tab of professionalExperienceWindowTabs">
           <button
             role="tab"
             [attr.aria-controls]="tab.id"
@@ -28,13 +16,57 @@
         </ng-container>
       </menu>
 
-      <ng-container *ngFor="let tab of windowTabs">
+      <ng-container *ngFor="let professionalTab of professionalExperienceWindowTabs">
         <article
           role="tabpanel"
-          [id]="tab.id"
-          [hidden]="!tab.selected"
+          [id]="professionalTab.id"
+          [hidden]="!professionalTab.selected"
         >
-          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+          <fieldset>
+            <legend>ℹ️ About</legend>
+            <ul class="tree-view">
+              <li>
+                🏢&nbsp;<b>Company</b>
+                <ul>
+                  <li>{{professionalTab.companyName}}</li>
+                </ul>
+              </li>
+              <li>
+                🌎&nbsp;<b>Location/Work type(s)</b>
+                <ul>
+                  <li>{{professionalTab.location}}</li>
+                  <ng-container *ngFor="let workType of professionalTab.workTypes">
+                    <li>{{workType}}</li>
+                  </ng-container>
+                </ul>
+              </li>
+              <li>
+                🕓&nbsp;<b>Duration</b>
+                <ul>
+                  <li>{{professionalTab.duration}}</li>
+                </ul>
+              </li>
+              <li>
+                🧑‍💻&nbsp;<b>Roles</b>
+                <ul>
+                  <ng-container *ngFor="let role of professionalTab.roles">
+                    <li>{{role}}</li>
+                  </ng-container>
+                </ul>
+              </li>
+              <li>
+                <details>
+                  <summary>🛠&nbsp;<b>Skills</b></summary>
+                  <ul>
+                    <ng-container *ngFor="let skill of professionalTab.skills">
+                      <li>{{skill}}</li>
+                    </ng-container>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </fieldset>
+          <label>💬 {{professionalTab.description}} 💬</label>
         </article>
       </ng-container>
     </section>
