@@ -14,7 +14,7 @@ export class ProfessionalExperienceWindowComponent implements OnInit {
   protected professionalExperienceWindowTabs: ProfessionalExperienceWindowTab[] = [
     {
       id: 'tab-totvs',
-      title: 'WS/TOTVS',
+      title: 'TOTVS',
       selected: true,
       companyName: 'Wealth Systems/TOTVS',
       location: 'Cascavel - PR, Brazil',
