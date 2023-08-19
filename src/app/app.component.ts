@@ -9,11 +9,9 @@ export class AppComponent implements OnInit {
 
   constructor(
   ) {
-    // Empty
   }
 
   ngOnInit() {
-    // Empty
   }
 
 }

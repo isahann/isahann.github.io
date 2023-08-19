@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Skill} from "../../types/Skill";
+import {Skill} from "../../model/Skill";
 
 @Component({
   selector: 'app-what-do-i-know',
@@ -10,7 +10,7 @@ export class WhatDoIKnowComponent implements OnInit {
 
   readonly skills: Skill[] = [
     {
-      area: 'Back-end',
+      area: '⚙️ Back-end',
       techs: [
         {
           description: 'Java',
@@ -35,20 +35,20 @@ export class WhatDoIKnowComponent implements OnInit {
       ]
     },
     {
-      area: 'Front-end',
+      area: '🖥 Front-end',
       techs: [
         {
           description: 'Basics',
-          subTechs: ['HTML 5', 'Intermediate CSS', 'Intermediate Javascript']
+          subTechs: ['HTML 5', 'CSS', 'Javascript']
         },
         {
           description: 'Frameworks',
-          subTechs: ['Angular', 'React', 'JSP/JSF', 'Primefaces', 'Materialize/Material design', 'Rxjs']
+          subTechs: ['Angular', 'React', 'JSP/JSF', 'Primefaces', 'Materialize/Material design', 'RxJs', 'NgRx', 'Sass/Scss']
         }
       ]
     },
     {
-      area: 'Other tools',
+      area: '🛠 Other tools',
       techs: [
         {
           description: 'Repositories',

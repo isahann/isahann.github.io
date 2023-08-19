@@ -1,22 +1,9 @@
-<div class="window" cdkDrag>
-  <div class="title-bar" cdkDragHandle>
-    <img
-      ngSrc="assets/images/icons/education.png"
-      alt="" height="16" width="16" class="window-title-icon"/>
-
-    <div class="title-bar-text">{{windowTitleBar}}</div>
-
-    <div class="title-bar-controls">
-      <ng-container *ngFor="let button of windowButtons">
-        <button [attr.aria-label]="button"></button>
-      </ng-container>
-    </div>
-  </div>
-
+<div class="window">
+  <app-window-title-bar [title]="this.windowTitleBar" iconPath="education.png"></app-window-title-bar>
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of windowTabs">
+        <ng-container *ngFor="let tab of educationWindowTabs">
           <button
             role="tab"
             [attr.aria-controls]="tab.id"
@@ -27,14 +14,51 @@
           </button>
         </ng-container>
       </menu>
-
-      <ng-container *ngFor="let tab of windowTabs">
+      <ng-container *ngFor="let educationTab of educationWindowTabs">
         <article
           role="tabpanel"
-          [id]="tab.id"
-          [hidden]="!tab.selected"
+          [id]="educationTab.id"
+          [hidden]="!educationTab.selected"
         >
-          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
+          <fieldset>
+            <legend>ℹ️ About</legend>
+            <ul class="tree-view">
+              <li>
+                🏢&nbsp;<b>Institution</b>
+                <ul>
+                  <li>{{educationTab.institution}}</li>
+                </ul>
+              </li>
+              <li>
+                🌎&nbsp;<b>Location</b>
+                <ul>
+                  <li>{{educationTab.location}}</li>
+                </ul>
+              </li>
+              <li>
+                🕓&nbsp;<b>Duration</b>
+                <ul>
+                  <li>{{educationTab.duration}}</li>
+                </ul>
+              </li>
+              <li>
+                📝&nbsp;<b>Degree</b>
+                <ul>
+                  <li>{{educationTab.degree}}</li>
+                </ul>
+              </li>
+              <li>
+                <details>
+                  <summary>🛠&nbsp;<b>Skills</b></summary>
+                  <ul>
+                    <ng-container *ngFor="let skill of educationTab.skills">
+                      <li>{{skill}}</li>
+                    </ng-container>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </fieldset>
         </article>
       </ng-container>
     </section>

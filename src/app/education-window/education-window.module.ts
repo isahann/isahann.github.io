@@ -1,24 +1,22 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {EducationWindowComponent} from "./education-window.component";
-import { UnivelComponent } from './univel/univel.component';
-import { UtfprComponent } from './utfpr/utfpr.component';
 import {DragDropModule} from "@angular/cdk/drag-drop";
-
+import {CommonComponentsModule} from "../common/common-components.module";
 
 @NgModule({
   declarations: [
     EducationWindowComponent,
-    UnivelComponent,
-    UtfprComponent
   ],
-    imports: [
-        CommonModule,
-        DragDropModule,
-        NgOptimizedImage
-    ],
+  imports: [
+    CommonModule,
+    DragDropModule,
+    NgOptimizedImage,
+    CommonComponentsModule
+  ],
   exports: [
     EducationWindowComponent
   ]
 })
-export class EducationWindowModule { }
+export class EducationWindowModule {
+}

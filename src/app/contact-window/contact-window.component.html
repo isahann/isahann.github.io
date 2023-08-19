@@ -1,42 +1,8 @@
-<div class="window" cdkDrag>
-  <div class="title-bar" cdkDragHandle>
-    <img
-      ngSrc="assets/images/icons/contact.png"
-      alt="" height="16" width="16" class="window-title-icon"/>
-
-    <div class="title-bar-text">{{windowTitleBar}}</div>
-
-    <div class="title-bar-controls">
-      <ng-container *ngFor="let button of windowButtons">
-        <button [attr.aria-label]="button"></button>
-      </ng-container>
-    </div>
-  </div>
-
+<div class="window">
+  <app-window-title-bar [title]="this.windowTitleBar" iconPath="contact.png"></app-window-title-bar>
   <div class="window-body">
-    <section class="tabs">
-      <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of windowTabs">
-          <button
-            role="tab"
-            [attr.aria-controls]="tab.id"
-            [attr.aria-selected]="tab.selected"
-            (click)="this.changeSelectedTab(tab)"
-          >
-            {{tab.title}}
-          </button>
-        </ng-container>
-      </menu>
-
-      <ng-container *ngFor="let tab of windowTabs">
-        <article
-          role="tabpanel"
-          [id]="tab.id"
-          [hidden]="!tab.selected"
-        >
-          <ng-template [ngComponentOutlet]="tab.component"></ng-template>
-        </article>
-      </ng-container>
-    </section>
+    <app-icon-button title="Gmail" iconPath="gmail.png" (onButtonClick)="this.redirect(0)"></app-icon-button>
+    <app-icon-button title="LinkedIn" iconPath="linkedin.png" (onButtonClick)="this.redirect(1)"></app-icon-button>
+    <app-icon-button title="GitHub" iconPath="github.png" (onButtonClick)="this.redirect(2)"></app-icon-button>
   </div>
 </div>
