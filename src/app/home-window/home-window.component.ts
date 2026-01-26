@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-window',
-  templateUrl: './home-window.component.html',
-  styleUrls: ['./home-window.component.sass']
+    selector: 'app-home-window',
+    templateUrl: './home-window.component.html',
+    styleUrls: ['./home-window.component.sass'],
+    standalone: false
 })
 export class HomeWindowComponent implements OnInit {
 

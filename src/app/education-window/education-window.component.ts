@@ -3,9 +3,10 @@ import {WindowTab} from "../model/Tab";
 import {EducationWindowTab} from "../model/EducationWindowTab";
 
 @Component({
-  selector: 'app-education-window',
-  templateUrl: './education-window.component.html',
-  styleUrls: ['./education-window.component.sass']
+    selector: 'app-education-window',
+    templateUrl: './education-window.component.html',
+    styleUrls: ['./education-window.component.sass'],
+    standalone: false
 })
 export class EducationWindowComponent implements OnInit {
 
