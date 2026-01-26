@@ -4,24 +4,24 @@
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of professionalExperienceWindowTabs">
+        @for (tab of professionalExperienceWindowTabs; track tab) {
           <button
             role="tab"
             [attr.aria-controls]="tab.id"
             [attr.aria-selected]="tab.selected"
             (click)="this.changeSelectedTab(tab)"
-          >
+            >
             {{ tab.title }}
           </button>
-        </ng-container>
+        }
       </menu>
 
-      <ng-container *ngFor="let professionalTab of professionalExperienceWindowTabs">
+      @for (professionalTab of professionalExperienceWindowTabs; track professionalTab) {
         <article
           role="tabpanel"
           [id]="professionalTab.id"
           [hidden]="!professionalTab.selected"
-        >
+          >
           <fieldset>
             <legend>ℹ️ About</legend>
             <ul class="tree-view">
@@ -35,9 +35,9 @@
                 🌎&nbsp;<b>Location/Work type(s)</b>
                 <ul>
                   <li>{{ professionalTab.location }}</li>
-                  <ng-container *ngFor="let workType of professionalTab.workTypes">
+                  @for (workType of professionalTab.workTypes; track workType) {
                     <li>{{ workType }}</li>
-                  </ng-container>
+                  }
                 </ul>
               </li>
               <li>
@@ -49,30 +49,30 @@
               <li>
                 🧑‍💻&nbsp;<b>Roles</b>
                 <ul>
-                  <ng-container *ngFor="let role of professionalTab.roles">
+                  @for (role of professionalTab.roles; track role) {
                     <li>{{ role }}</li>
-                  </ng-container>
+                  }
                 </ul>
               </li>
               <li>
                 <details>
                   <summary>🛠&nbsp;<b>Skills</b></summary>
                   <ul>
-                    <ng-container *ngFor="let skill of professionalTab.skills">
+                    @for (skill of professionalTab.skills; track skill) {
                       <li>{{ skill }}</li>
-                    </ng-container>
+                    }
                   </ul>
                 </details>
               </li>
             </ul>
           </fieldset>
           <div class="description">
-            <ng-container *ngFor="let description of professionalTab.descriptions">
+            @for (description of professionalTab.descriptions; track description) {
               <p><label> {{ description }} </label></p>
-            </ng-container>
+            }
           </div>
         </article>
-      </ng-container>
+      }
     </section>
 
     <div class="home">

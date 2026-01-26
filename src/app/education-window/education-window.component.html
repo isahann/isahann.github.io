@@ -3,23 +3,23 @@
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of educationWindowTabs">
+        @for (tab of educationWindowTabs; track tab) {
           <button
             role="tab"
             [attr.aria-controls]="tab.id"
             [attr.aria-selected]="tab.selected"
             (click)="this.changeSelectedTab(tab)"
-          >
+            >
             {{tab.title}}
           </button>
-        </ng-container>
+        }
       </menu>
-      <ng-container *ngFor="let educationTab of educationWindowTabs">
+      @for (educationTab of educationWindowTabs; track educationTab) {
         <article
           role="tabpanel"
           [id]="educationTab.id"
           [hidden]="!educationTab.selected"
-        >
+          >
           <fieldset>
             <legend>ℹ️ About</legend>
             <ul class="tree-view">
@@ -51,16 +51,16 @@
                 <details>
                   <summary>🛠&nbsp;<b>Skills</b></summary>
                   <ul>
-                    <ng-container *ngFor="let skill of educationTab.skills">
+                    @for (skill of educationTab.skills; track skill) {
                       <li>{{skill}}</li>
-                    </ng-container>
+                    }
                   </ul>
                 </details>
               </li>
             </ul>
           </fieldset>
         </article>
-      </ng-container>
+      }
     </section>
     <div class="home">
       <app-icon-button iconPath="home.png" title="Home" routerLink=""></app-icon-button>
