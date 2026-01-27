@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-contact-window',
-  templateUrl: './contact-window.component.html',
-  styleUrls: ['./contact-window.component.sass']
+    selector: 'app-contact-window',
+    templateUrl: './contact-window.component.html',
+    styleUrls: ['./contact-window.component.sass'],
+    standalone: false
 })
 export class ContactWindowComponent implements OnInit {
 

@@ -3,9 +3,10 @@ import {WindowTab} from "../model/Tab";
 import {ProfessionalExperienceWindowTab} from "../model/ProfessionalExperienceWindowTab";
 
 @Component({
-  selector: 'app-professional-experience-window',
-  templateUrl: './professional-experience-window.component.html',
-  styleUrls: ['./professional-experience-window.component.sass']
+    selector: 'app-professional-experience-window',
+    templateUrl: './professional-experience-window.component.html',
+    styleUrls: ['./professional-experience-window.component.sass'],
+    standalone: false
 })
 export class ProfessionalExperienceWindowComponent implements OnInit {
 

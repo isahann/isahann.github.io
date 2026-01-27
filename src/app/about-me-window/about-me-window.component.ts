@@ -5,9 +5,10 @@ import {WhatDoIDoComponent} from "./what-do-i-do/what-do-i-do.component";
 import {WhatDoIKnowComponent} from "./what-do-i-know/what-do-i-know.component";
 
 @Component({
-  selector: 'app-about-me-window',
-  templateUrl: './about-me-window.component.html',
-  styleUrls: ['./about-me-window.component.sass']
+    selector: 'app-about-me-window',
+    templateUrl: './about-me-window.component.html',
+    styleUrls: ['./about-me-window.component.sass'],
+    standalone: false
 })
 export class AboutMeWindowComponent implements OnInit {
 

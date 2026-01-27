@@ -3,27 +3,27 @@
   <div class="window-body">
     <section class="tabs">
       <menu role="tablist" aria-label="Sample tabs">
-        <ng-container *ngFor="let tab of windowTabs">
+        @for (tab of windowTabs; track tab) {
           <button
             role="tab"
             [attr.aria-controls]="tab.id"
             [attr.aria-selected]="tab.selected"
             (click)="this.changeSelectedTab(tab)"
-          >
+            >
             {{tab.title}}
           </button>
-        </ng-container>
+        }
       </menu>
 
-      <ng-container *ngFor="let tab of windowTabs">
+      @for (tab of windowTabs; track tab) {
         <article
           role="tabpanel"
           [id]="tab.id"
           [hidden]="!tab.selected"
-        >
+          >
           <ng-template [ngComponentOutlet]="tab.component"></ng-template>
         </article>
-      </ng-container>
+      }
     </section>
 
     <div class="home">

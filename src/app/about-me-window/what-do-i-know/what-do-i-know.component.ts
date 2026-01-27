@@ -2,9 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {Skill} from "../../model/Skill";
 
 @Component({
-  selector: 'app-what-do-i-know',
-  templateUrl: './what-do-i-know.component.html',
-  styleUrls: ['./what-do-i-know.component.sass']
+    selector: 'app-what-do-i-know',
+    templateUrl: './what-do-i-know.component.html',
+    styleUrls: ['./what-do-i-know.component.sass'],
+    standalone: false
 })
 export class WhatDoIKnowComponent implements OnInit {
 
