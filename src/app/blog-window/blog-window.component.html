@@ -1,0 +1,32 @@
+<div class="window">
+    <app-window-title-bar title="Blog" iconPath="blog.png"></app-window-title-bar>
+    <div class="window-body">
+
+        <div class="window-body_blog-content">
+            <div class="window-body_blog-content_posts">
+                <label>Blog posts</label>
+                <ul class="tree-view">
+                    <li>Table of Contents</li>
+                    <li>What is web development?</li>
+                    <li>
+                        CSS
+                        <ul>
+                            <li>Selectors</li>
+                            <li>Specificity</li>
+                            <li>Properties</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <article role="tabpanel">
+                <markdown
+                    [src]="selectedBlogPost"
+                ></markdown>
+
+            </article>
+        </div>
+
+        <app-icon-button iconPath="home.png" title="Home" routerLink=""></app-icon-button>
+    </div>
+</div>

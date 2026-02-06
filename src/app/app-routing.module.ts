@@ -7,6 +7,7 @@ import {
 } from "./professional-experience-window/professional-experience-window.component";
 import {EducationWindowComponent} from "./education-window/education-window.component";
 import {ContactWindowComponent} from "./contact-window/contact-window.component";
+import {BlogWindowComponent} from "./blog-window/blog-window.component";
 
 const routes: Routes = [
   {
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'education',
     component: EducationWindowComponent
+  },
+  {
+    path: 'blog',
+    component: BlogWindowComponent
   },
   {
     path: 'contact',

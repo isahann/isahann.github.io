@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^20.3.16",
     "@angular/router": "^20.3.16",
     "clippyjs": "^0.0.3",
+    "ngx-markdown": "^20.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "xp.css": "^0.2.6",
